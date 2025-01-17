@@ -1,4 +1,4 @@
-# Dossier contenant mon mémoire de master 2 "Technologies numériques appliquées à l'histoire" de l'Ecole nationale des chartes
+# Dossier contenant mon mémoire de master 2 "Technologies numériques appliquées à l'histoire" de l'École nationale des chartes
 
 ## Référence bibliographique
 Sarah Marcq, _Des usages archivistiques pour l’intelligence artificielle. Le cas de l’automatisation de l’inventaire des archives à la Chambre des Députés du Grand-Duché de Luxembourg_, mémoire de master « Technologies numériques appliquées à l’histoire », dir. Florian Cafiero, École nationale des chartes, 2024.
