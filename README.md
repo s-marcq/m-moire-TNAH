@@ -23,48 +23,48 @@ ween the fields of archives and artificial intelligence can be interconnected. T
 ### Introduction
 ### I Un contexte public luxembourgeois propice au lancement de projets IA dans les archives malgré la complexité de leur mise en place
 - **1 Un contexte européen et luxembourgeois favorable au développement de projets IA dans le secteur public**
-    1. Ambitions et bénéfices pour les administrations publiques
-    2. La mise en place d’un cadre propice au développement de l’IA dans les institutions publiques
-    3. Le cas des parlements : vers les premières mises en production d’outils basés sur l’IA
+    1) Ambitions et bénéfices pour les administrations publiques
+    2) La mise en place d’un cadre propice au développement de l’IA dans les institutions publiques
+    3) Le cas des parlements : vers les premières mises en production d’outils basés sur l’IA
 - **2 Les archives au Luxembourg : législation récente et traitements urgents qui poussent vers l’exploration de moyens d’automatisation**
-    1. Un cadre légal récent
-    2. Les enjeux des archives numériques : un territoire peu exploré et de nouvelles données à appréhender
+    1) Un cadre légal récent
+    2) Les enjeux des archives numériques : un territoire peu exploré et de nouvelles données à appréhender
 - **3 Prérequis et points d’attention pour le pilotage de projets d’automatisation via l’IA dans les archives**
-    1. Des besoins métier multiples mais des cas d’usage à préciser
-    2. Optimiser la gestion de projets IA dans les archives : réflexions et défis
-    3. Gestion des risques et défis éthiques des systèmes basés sur le machine learning
+    1) Des besoins métier multiples mais des cas d’usage à préciser
+    2) Optimiser la gestion de projets IA dans les archives : réflexions et défis
+    3) Gestion des risques et défis éthiques des systèmes basés sur le machine learning
 
 ### II Les apports des projets IA dans les archives : perspectives, état des lieux et synergies
 
 - **4 Des solutions légères de machine learning pour les archives**
-    1. TAL (Traitement Automatique du Langage) pour la classification :clustering et topic modelling
-    2. La reconnaissance d’entités nommées
-    3. Le traitement automatique sur les images
-    4. Des usages sur les tâches aux impacts moins élevés : recherche, indexation et découvrabilité
+    1) TAL (Traitement Automatique du Langage) pour la classification :clustering et topic modelling
+    2) La reconnaissance d’entités nommées
+    3) Le traitement automatique sur les images
+    4) Des usages sur les tâches aux impacts moins élevés : recherche, indexation et découvrabilité
 - **5 Les grands modèles de langage : un moyen efficace d’automatisation de tâches archivistiques ?**
-    1. Les promesses des LLM (Large language models)
-    2. La réalité archivistique : les possibilités d’automatisation dans les processus métier
-    3. Au delà des usages métier : RAG, recherche et médiation
+    1) Les promesses des LLM (Large language models)
+    2) La réalité archivistique : les possibilités d’automatisation dans les processus métier
+    3) Au delà des usages métier : RAG, recherche et médiation
 - **6 Au-delà de l’automatisation, des apports connexes : exploration des données, collaboration et visibilité**
-    1. La quête des données d’entraînement : exploration en profondeur des données et découverte de silos à décloisonner
-    2. Des apports moins techniques : des projets qui renforcent les liens entre les services et apportent une visibilité sur le monde des archives
+    1) La quête des données d’entraînement : exploration en profondeur des données et découverte de silos à décloisonner
+    2) Des apports moins techniques : des projets qui renforcent les liens entre les services et apportent une visibilité sur le monde des archives
 - **7 Ce que les archives peuvent apporter à l’IA**
-    1. Maîtrise des normes, données structurées et classées
-    2. Une certaine maîtrise de la description : l’opportunité de renforcer la transparence des données produites par les algorithmes
+    1) Maîtrise des normes, données structurées et classées
+    2) Une certaine maîtrise de la description : l’opportunité de renforcer la transparence des données produites par les algorithmes
 
 ### III Les défis éthiques et techniques du déploiement de systèmes basés sur l’IA
 - **8 Problématiques éthiques et environnementales**
-    1. Des risques sociaux et éthiques
-    2. Besoins matériels et impact écologique
+    1) Des risques sociaux et éthiques
+    2) Besoins matériels et impact écologique
 
 - **9 Un processus d’évaluation long et nécessitant des connaissances techniques**
-    1. Un processus itératif complexe à mettre en place
-    2. Quelles métriques d’évaluation pour des tâches liées au langage ?
+    1) Un processus itératif complexe à mettre en place
+    2) Quelles métriques d’évaluation pour des tâches liées au langage ?
 
 - **10 Problématiques de mise en production**
-    1. Une chaîne de traitement à mettre en place
-    2. Interface et intégration à la chaîne archivistique
-    3. De l’informatique recherche au déploiement
+    1) Une chaîne de traitement à mettre en place
+    2) Interface et intégration à la chaîne archivistique
+    3) De l’informatique recherche au déploiement
 
 ### Conclusion
 ### Glossaire
