@@ -1,0 +1,179 @@
+
+  	L'intelligence artificielle attire actuellement un grand afflux d'investissements, 
+  	à tel point que certains craignent l'émergence d'une bulle spéculative susceptible d'éclater.
+	Nous n'en sommes néanmoins pas encore là : selon son bilan publié fin août 2024, les bénéfices de l'entreprise Nvidia, qui domine le marché des
+	processeurs graphiques pour l'intelligence artificielle, auraient bondi de plus de 150\% en un an.
+	Les technologies d'IA promettent de stimuler la croissance en automatisant divers processus, 
+	mais il reste à voir si ces investissements porteront leurs fruits à long terme, 
+	en particulier dans des domaines spécifiques comme les archives.
+
+ 	
+	C'est dans ce contexte que le projet \emph{InventAIre} a vu le jour à la Chambre des Députés du Grand-Duché de Luxembourg,
+	 animé par la volonté d'automatiser le processus d'inventaire des fonds d'archives. 
+	 Cet inventaire fournit une description de ces derniers et permet d'automatiser le calcul des délais de communicabilité.
+	 Il s'agit d'un modèle provenant des Archives
+	nationales du Grand-Duché (ANLux), choisi par l'équipe dans une
+	volonté d'harmonisation des outils de description au niveau national.
+	Cet inventaire est un fichier \emph{Excel} contenant 17 colonnes~:
+	\begin{multicols}{3}
+			\begin{itemize}\footnotesize{
+					\item Cote
+					\item Localisation
+					\item Identification de la série du plan de classement
+					\item Code série du tableau de tri
+					\item Titre
+					\item Description
+					\item Période de création~: de
+					\item Période de création~: à
+					\item Soumis au droit d'auteur
+					\item Données à caractère personnel
+					\item Acte d'état civil
+					\item Acte notarié
+					\item Atteinte aux relations extérieures, à la sécurité du Grand-Duché ou à
+					l'ordre public
+					\item Affaires portées devant les instances juridictionnelles,
+					extrajudiciaires ou disciplinaires
+					\item Prévention, recherche de faits punissables
+					\item Données commerciales et industrielles
+					\item Secret fiscal}
+				\end{itemize}
+		\end{multicols}
+	
+	Le projet InventAIre est un projet pilote dont l'objectif principal
+	était le développement d'un prototype permettant d'automatiser la
+	rédaction de cet inventaire. Il a vu le jour à la Chambre des Députés du
+	Grand-Duché, organe législatif du Luxembourg, responsable de
+	l\textquotesingle élaboration et de l\textquotesingle adoption des lois.
+	Composée de soixante députés élus au suffrage universel pour une durée de cinq
+	ans, elle joue un rôle central dans le processus législatif et la
+	surveillance du gouvernement en vertu de la séparation des pouvoirs. 
+	Les fonds les plus anciens conservés par l'administation datent d'après 1945.
+	L'occupant a en effet transféré l'ensemble des fonds de la Chambre aux Archives de 
+	l'État en 1940. Avant ce transfert, les premiers documents conservés remontaient aux débuts de l'institution, 
+	fondée en 1848, moment où une nouvelle constitution fait du Luxembourg 
+	une monarchie constitutionnelle.
+	\newline	
+	
+	Le
+	projet d'automatisation du remplissage de l'inventaire de ces archives
+	s'est déroulé dans le cadre de notre stage de quatre mois à la Chambre.
+	Il s'agissait d'évaluer la faisabilité de cette automatisation et de
+	produire un prototype d'outil.
+	Nous avons également produit une note méthodologique dont le but était
+	d'expliquer les choix réalisés dans le cadre du projet, les difficultés
+	rencontrées, et de proposer des recommandation en cas de suite du
+	projet. Elle se trouve en annexe\footnote{N’étant pas public, le document a dû être retiré de la version diffusée du mémoire. S’adresser à la Chambre des Députés pour le consulter.}. Ces réflexions ont alimenté
+	la rédaction de ce mémoire, qui constitue une prise de recul
+	problématisée sur le stage et les usages archivistiques potentiels de
+	l'intelligence artificielle au Luxembourg. Par « usage », nous entendons
+	les différentes manières dont les technologies peuvent être appliquées
+	pour optimiser les processus archivistiques, qu'il s'agisse de gestion,
+	conservation, communication, description ou recherche dans les archives.
+	L\textquotesingle« intelligence artificielle » (IA), quant à elle, se
+	réfère à des systèmes informatiques qui seraient capables de simuler des
+	capacités cognitives humaines, comme l'apprentissage et la prise de
+	décision, afin de traiter et analyser des données à grande échelle.
+	Cependant, ce terme est parfois utilisé de manière floue pour désigner
+	ce que l'on appelle plus précisément l'\gls{apprentissage}. Dans ce mémoire, nous emploierons parfois les
+	termes « intelligence artificielle » et « \emph{machine learning} » de manière
+	indistincte pour simplifier la compréhension, tout en étant consciente
+	que le terme « intelligence artificielle » peut parfois manquer de
+	précision. 
+	
+	Ces systèmes d'intelligence artificielle ne datent pas
+	d'hier. Elle est théorisée par plusieurs penseurs tels qu'Alan Turing
+	et les chercheurs Warren McCulloch et Walter Pitts, qui, dès les années
+	1940, posent les bases des réseaux de neurones. Le \emph{Perceptron},
+	algorithme de classification développé par Frank Rosenblatt en 1958,
+	marque un premier pas dans son développement technique, introduisant un premier modèle capable
+	d\textquotesingle apprendre à partir de données. Cependant, les années
+	1970 et 1980 connaissent un premier «~hiver~» de l\textquotesingle IA,
+	caractérisé par un manque de moyens techniques et un pessimisme
+	croissant parmi les chercheurs face aux limites des technologies de
+	l\textquotesingle époque. Ce déclin est suivi par une renaissance dans
+	les années 1980 grâce aux systèmes experts, programmes informatiques
+	conçus pour imiter le jugement et le comportement d\textquotesingle un
+	expert humain dans des domaines spécifiques en utilisant des règles de
+	décision et des bases de connaissances. Néanmoins, à partir de 1987, un
+	second hiver de l\textquotesingle IA survient en raison des défis
+	techniques persistants. Les années 1990 marquent un tournant avec des
+	événements comme la défaite du champion mondial
+	d\textquotesingle échecs Garry Kasparov contre \emph{Deep Blue} en 1997,
+	illustrant la puissance croissante des systèmes d\textquotesingle IA.
+	Une autre évolution arrive en 2008 avec l\textquotesingle émergence du
+	\gls{deep}, qui transforme radicalement les capacités des
+	machines, leur permettant apprendre et de traiter des données complexes. En 2016,
+	\emph{AlphaGo} de Google DeepMind bat le champion du monde du jeu
+	de go. Les systèmes IA commencent à être en capacité de maîtriser des jeux de
+	stratégie complexes. En 2017, l\textquotesingle introduction de
+	l\textquotesingle architecture \emph{Transformer} marque une nouvelle
+	ère, permettant le développement de grands modèles de langage qui seront
+	capables de comprendre et de générer du texte de manière plus fluide et
+	contextualisée. Enfin, fin 2022, le lancement de \emph{ChatGPT} par
+	\emph{OpenAI} propulse les \gls{générative}s\footnote{Branche de
+			l\textquotesingle intelligence artificielle dont les modèles créent de
+			nouvelles données, telles que du texte, des images ou de la musique.\newline
+	
+	N.B. La majorité des définitions de ce mémoire a été rédigée à l'aide de 
+	ChatGPT.	
+	}
+	sur le devant de la scène, rendant l\textquotesingle intelligence
+	artificielle plus accessible et interactive que jamais.
+	Elle est de plus en plus présente dans le quotidien du grand public 
+	et il en a désormais davantage conscience.
+	
+	Aujourd'hui, les projets se multiplient dans les secteurs publics et privés face à
+	des possibilités d'automatisation qui semblent infinies. Dans le secteur
+	public luxembourgeois, les projets d'intelligence artificielle
+	commencent à émerger. Les administrations publiques s'intéressent à ce
+	type de technologies mais peu de projets d'envergure ont pour
+	l'instant abouti. Ils en sont souvent encore à la phase de pilote. 
+	Ce facteur a rendu la recherche de sources difficile pour ce mémoire. 
+	Nous nous sommes basée sur beaucoup de prépublications, d'articles de revues 
+	ou de communications lors de conférences. Il y a encore peu d'ouvrages généraux
+	 sur les enjeux et usages de l'IA dans le secteur public
+	et encore moins dans le domaine archives.
+	
+	Les administrations ont
+	néanmoins compris les avantages de l'intelligence artificielle et ont
+	beaucoup d'ambition. En ce qui concerne les services d'archives publics,
+	les usages de systèmes basés sur le \emph{machine learning} sont pour l'instant
+	réduits. Les services doivent se concentrer sur les traitements les plus
+	urgents, qui concernent le papier et sont difficilement automatisables.
+	En effet, les législations sont récentes. Les services ont un arriéré
+	important à traiter et manquent souvent de personnel. Au delà du défi de
+	l'arriéré, les administrations doivent aussi faire face au défi du
+	numérique~: la production documentaire augmente et les pratiques ne sont
+	pas encore complètement formalisées. L'intelligence artificielle, via l'automatisation
+	de certains processus, paraît 
+	pouvoir fournir une réponse à certaines de ces problématiques.
+	Cette situation soulève plusieurs
+	enjeux : bien que l\textquotesingle automatisation offre de nombreuses
+	possibilités et que les projets d\textquotesingle intelligence
+	artificielle, très en vogue et ambitieux, soient en pleine expansion,
+	les services d\textquotesingle archives publics sont-ils réellement
+	prêts ? Il paraît important de déterminer les prérequis nécessaires à la
+	mise en place de ce type de projets. Un travail de prise de recul sur 
+	les apports, aussi divers soient-ils, et les complexités 
+	de mise en place des systèmes IA s'impose.
+
+L'intelligence artificielle est-elle une solution aux défis
+archivistiques rencontrés par les producteurs d'archives publiques
+luxembourgeois~?
+
+Dans une première partie, nous verrons en quoi le contexte public
+luxembourgeois est propice au lancement de projets IA malgré leur
+complexité de mise en place. Les ambitions des pouvoirs publics et des
+parlements sont importantes, un dialogue et un cadre se mettent en
+place. Nous présenterons plus en détail les défis auxquels sont
+confrontés les producteurs d'archives publiques luxembourgeois afin
+d'explorer les nombreuses potentialités d'automatisation. En dépit de ce
+contexte public favorable et de ces larges possibilités, la mise en
+place de projets IA est complexe et nécessite des précautions.
+Nous verrons ensuite qu'une fois menés, les projets IA 
+peuvent avoir des apports importants pour les services d'archives. 
+Ces derniers ne se situent pas forcément là où on les imagine et 
+peuvent s'avérer connexes entre archives et IA.
+Enfin, notre dernière partie sera consacrée aux précautions éthiques et prérequis
+techniques spécifiques à l'IA. Elle sera l'occasion de réfléchir sur
+des facteurs parfois ignorés à prendre en compte avant la mise en production d'outils basés sur du \emph{machine learning}.

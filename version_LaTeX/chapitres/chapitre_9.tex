@@ -1,0 +1,148 @@
+\chapter{Un processus d'évaluation long et nécessitant des connaissances techniques}
+
+
+
+\subsection{Un processus itératif complexe à mettre en place}
+
+L'évaluation des modèles est un passage obligé dans la phase de recherche et développement de systèmes IA. Elle se fait à plusieurs étapes du projet. 
+D'abord, il est nécessaire de sélectionner le modèle ou l'algorithme le plus adapté à la tâche d'automatisation à réaliser.
+Ce choix doit être basé sur une série de tests comparatifs. Cette phase de test est un processus long et exigeant en ressources puisqu'il 
+convient d'évaluer différentes solutions afin de voir laquelle est la plus performante. 
+C'est ce que souligne Yves Maurer, responsable de la division informatique et de l'innovation numérique à la BNL, à propos du \gls{chatbot} développé par l'institution dans un entretien pour le magazine \emph{Archimag} : \enquote{Le plus chronophage a été de tester plusieurs alternatives pour chaque brique du projet : des modèles de langage ouverts, un autre créé par un groupe de recherche, celui de Meta et de Google\dots\footcite{noauthor_comment_nodate}}.
+
+Pour effectuer ces tests, il faut avoir à disposition un corpus de test étiqueté ou bien évaluer manuellement chaque modèle. 
+Les problématiques d'évaluation seront détaillées dans la sous-partie suivante. 
+Avant le choix, des recherches sur les modèles ou algorithmes les plus adaptés est à réaliser. 
+Il existe en effet un grand nombre de modèles sur le marché, et ce nombre devrait s'accroître encore davantage dans le futur.
+Il est aisé de se perdre face au grand nombre de possibilités existantes, d'autant plus qu'il est difficile de prévoir la solution ou le modèle le plus performant sur la tâche à réaliser. 
+Cela dépend des données disponibles, de leur volume, ainsi que de la nature de la tâche à accomplir. Le choix optimal peut donc sembler légèrement aléatoire, nécessitant une évaluation précise pour trouver la solution la mieux adaptée aux besoins spécifiques du projet.
+Une deuxième phase de tests et d'évaluation se fait une fois la méthode choisie, centrée sur l'optimisation des paramètres du modèle. 
+Un grand nombre de paramètres est en effet modifiable. 
+Nous avons déjà évoqué les paramètres mathématiques et les \enquote{\gls{stop-words}} dans le cas des algorithmes de classification automatique dans le chapitre 4 du présent mémoire. 
+Dans le cas des \gls{LLM}, de nombreux paramètres sont également modifiables et influent sur les performances. 
+En voici une liste non exhaustive~:
+\begin{itemize}
+	\item \textbf{Température~:} Ce paramètre contrôle la créativité des réponses générées. Une faible température favorise les choix de mots les plus probables, tandis qu'une température élevée encourage la génération de texte plus varié et créatif, mais potentiellement moins cohérent.
+	\item \textbf{\emph{Top-k}~:} Limite la sélection des mots suivants à un sous-ensemble des k mots les plus probables, réduisant ainsi la complexité et augmentant potentiellement la cohérence des réponses.
+	\item \textbf{\emph{Top-p} ou \emph{Nucleus Sampling}~:} Ce paramètre permet aussi de sélectionner les mots suivants en fonction de leur probabilité, cette fois-ci non selon leur rang mais selon un niveau de probabilité cumulée minimal défini.
+	\item \textbf{Pénalité de fréquence \emph{(Frequency Penalty)}~:} Une pénalité proportionnelle au nombre de fois où il a déjà été utilisé dans la réponse est appliquée au prochain \gls{token}. Elle réduit donc la probabilité de répétition des mêmes mots, augmentant ainsi la diversité des réponses.
+	\item \textbf{Pénalité de présence \emph{(Presence Penalty)}~:} Une pénalité est appliquée au prochain \gls{token} s'il a déjà été utilisé dans la réponse. Elle est la même pour tous les \emph{tokens} réutilisés, peu importe le nombre de fois où ils l'ont été. Elle réduit la redondance dans les réponses tout en aidant le modèle à rester concentré sur le sujet principal, évitant ainsi les digressions.
+	\item \textbf{Nombre maximal de \gls{token}s~:}  Définit la longueur maximale de la réponse à générer. Dans le cadre du projet InventAIre, par exemple, où seules des réponses booléennes ou des pourcentages de probabilité étaient nécessaires pour remplir les colonnes sur les données sensibles, nous avons limité le nombre maximal de tokens à 3 afin de n'obtenir que ces réponses. Cela permet surtout de gagner du temps et de réduire l'utilisation des ressources informatiques.
+	\item \textbf{\emph{Stop Sequences}~:} Permet de définir des séquences de mots qui, une fois rencontrées, arrêtent la génération de texte, assurant ainsi un contrôle plus précis sur la sortie du modèle. Nous aurions également pu utiliser cette méthode dans le code de notre outil pour le projet InventAIre. 
+	\item \textbf{\gls{quantization}~:} Technique de compression qui réduit la précision des calculs internes pour accélérer les \gls{inference}s tout en maintenant des performances acceptables. L'outil développé pendant notre stage intègre une quantisation 4 bits pour les titres et les descriptions et 8 bits pour le repérage des données sensibles. La quantisation 4 bits réduit la représentation numérique des poids des modèles, c'est-à-dire les paramètres internes du réseau de neurones qui sont ajustés pendant l'entraînement, à 16 niveaux distincts (2\up{4}), tandis que la quantisation 8 bits utilise 256 niveaux (2\up{8}).
+	\end{itemize}
+
+Après avoir ajusté ces paramètres, l'outil doit être soumis à une évaluation rigoureuse. 
+Les résultats de cette évaluation détermineront les conditions d'utilisation du modèle~: 
+si la précision est proche de 100\%, une vérification humaine minimale sera nécessaire, tandis qu'une précision moyenne exigera un contrôle plus strict par l'humain.
+
+Par la suite, des évaluations régulières du modèle sont à réaliser afin de garantir sa pertinence au fil du temps. 
+La réactualisation d'un modèle d'intelligence artificielle peut impliquer un ré-entraînement pour améliorer ses performances ou l'adapter à de nouvelles données. Si le modèle a été développé à partir de zéro, il peut nécessiter un ré-entraînement complet pour intégrer des améliorations ou des changements dans les données. Si le modèle a été affiné, il devra l'être de nouveau. Dans le cas des systèmes basés sur du \gls{RAG}, cette réactualisation inclut l'injection de nouvelles données dans la base de connaissance et leur \gls{vectorisation} pour enrichir le modèle avec des informations plus récentes et/ou pertinentes. Les \emph{LLM} conversationnels nécessitent également une actualisation régulière. Cela peut inclure la modification des prompts pour mieux refléter les nouvelles données ou les exigences spécifiques du projet. Il est aussi possible d'adopter une version plus récente du modèle choisi, qui peut ainsi amener à des améliorations en termes de performance et de capacité, ou bien de sélectionner un autre modèle plus récent et plus puissant, capable de mieux répondre aux besoins du moment et d'intégrer les avancées technologiques les plus récentes. Dès lors, les prompts devront être actualisés selon les exigences des modèles.
+ Une longue phase de tests et éventuellement de ré-entraînement est donc aussi à prévoir pour en cas de changement de modèle. Les réflexions sur l'actualisation des outils mis en place doivent être accompagnées d'une veille sur l'actualité des méthodes et des modèles de \emph{machine learning}.
+Une partie du processus est automatisable. Par exemple, si les résultats fournis par la machine sont constamment vérifiés par l'humain, des statistiques peuvent être aisément réalisées sur le nombre de données produites ayant dû être corrigées par le personnel au fil du temps. Si les réponses des modèles sont utilisés telles quelles, sans processus de vérification, il faudrait penser à mettre en place des pratiques de test par échantillonnage réguliers.
+
+Ce processus itératif est à penser en amont. Le temps qu'il demande et son coût peuvent être sous-estimés, en particulier quand le choix technique se porte sur les \emph{LLM} conversationnels qui semblent être des outils \enquote{clé en main} alors que leur usage nécessite des compétences techniques non négligeables, en particulier sur l'automatisation de tâches complexes. 
+Cette nature itérative a toutefois l'avantage de bien s'inscrire dans des pratiques de gestion de projet agiles cycliques.
+Des statistiques d'évaluation et des visualisations de données les plus neutres possibles et faciles à comprendre sont
+utiles pour valider les résultats à la fin des cycles et orienter les décisions tout au long du projet.
+Néanmoins, dépendant de métriques élaborées, ces statistiques peuvent parfois être difficiles à établir.
+
+
+\subsection{Quelles métriques d'évaluation pour des tâches liées au langage ?}
+
+Pour que le processus d'évaluation soit précis, des métriques doivent avoir été définies en amont.
+Les métriques de base en \gls{apprentissage} sont la \gls{précision} et le \gls{rappel}. La \gls{précision} est le ratio
+de prédictions correctes par rapport à l'ensemble des prédictions et le
+\gls{rappel} correspond au ratio de prédiction correctes par rapport à l'ensemble des
+entités qui devraient être identifiées. La précision mesure donc la
+capacité du modèle à éviter les faux positifs, tandis que le rappel
+évalue sa capacité à identifier toutes les entités pertinentes. A partir de cette précision et ce rappel
+peut être établi le \gls{F1-score}, qui calcule une moyenne entre les deux située entre 0 et 1.
+
+Le calcul de cette précision et ce rappel sont relativement simples dans le cas d'une classification ou de réponses booléennes. 
+Par exemple, concernant les colonnes sur les données sensibles de notre inventaire, la réponse est soit vraie, soit fausse.
+Toutefois, en ce qui concerne de la génération de langage, cette analyse est plus subtile. Elles est donc plus complexe à automatiser.
+En effet, il est plus aisé de faire tourner différents modèles ou bien le même modèle dont les paramètres ont été modifiés
+sur des données préalablement étiquetées avec des \enquote{vrai} ou \enquote{faux} et de regarder le taux d'erreur.
+Des métriques spécifiques d'évaluation du langage généré par comparaison avec un texte de référence existent. Ces dernières permettent d'automatiser l'évaluation et donc de lutter contre les inconvénients liés à la subjectivité humaine, même si cette dernière reste présente dans le texte de référence, rédigé par l'humain. En voici une liste non-exhaustive~:
+
+\begin{itemize}[label=\textbullet]
+	\item \textbf{\emph{WER (Word Error Rate)}}~: métrique au départ utilisée pour évaluer la précision des 
+	systèmes de reconnaissance vocale. Elle mesure le pourcentage d'erreurs, telles que les substitutions, 
+	les insertions et les suppressions, dans le texte transcrit par rapport au texte de référence.
+	\item \textbf{Approches basées sur des modèles pré-entraînés}: mesurent la similarité entre le texte généré et le texte de référence en utilisant les
+		\gls{embeddings} de modèles pré-entraînés. L'évaluation est donc basée sur une similarité sémantique et contextuelle. Un exemple de métrique basée
+		sur un modèle pré-entraîné est le \emph{BERTScore}, avec le modèle \emph{BERT} de \emph{Google}.
+
+	\item \textbf{Métriques développées pour l'évaluation de traductions} mais restant applicables à l'analyse de résumés.
+			\begin{itemize}[label=\textopenbullet]
+				\item \textbf{\emph{BLEU (BiLingual Evaluation Understudy)}}~: compare les n-grammes (mots ou séquences de mots) du texte généré aux n-grammes du ou de textes de référence, en utilisant une formule qui mesure une précision avec un ajustement selon la longueur des phrases.
+				\item \textbf{\emph{METEOR (Metric for Evaluation of Translation with Explicit ORdering)}}~: mesure la qualité des traductions/résumés en comparant les n-grammes, en incluant leurs synonymes et la correspondance de leur radical, entre le texte généré et les textes de référence. Il s'agit d'une moyenne entre précision et rappel.	
+			\end{itemize}
+	
+	\item \textbf{\emph{ROUGE (Recall-Oriented Understudy for Gisting Evaluation)}}~: développée pour mesurer la qualité de la génération de résumés, cette métrique mesure la similarité
+	entre un résumé généré automatiquement et un ou plusieurs résumés de référence. Pour cela, les scores de précision et de rappel sont calculés
+	en comparant les n-grammes présents dans le résumé généré avec ceux des résumés de référence.
+	Une plus grande attention est accordée au score de rappel, qui évalue la quantité d'informations importantes des résumés de référence capturées par le résumé généré.\footcite{noauthor_large_2023}.
+\end{itemize}
+
+Les métriques sont donc très diverses et ne sont pas forcément aisées à saisir. Elles nécessitent un travail de réflexion en amont, et parfois des moyens techniques conséquents
+lorsqu'elles sont basées sur des algorithmes complexes ou du \emph{machine learning}. Il est nécessaire de bien les maîtriser pour fournir une 
+évaluation la plus précise possible.
+
+Des \gls{benchmark}s 
+plus généraux existent par ailleurs pour évaluer les grands modèles de langage. De nombreux sont disponibles en ligne\footnote{Voir par exemple ceux disponibles ici~: \url{https://huggingface.co/collections/open-llm-leaderboard/the-big-benchmarks-collection-64faca6335a7fc7d4ffe974a}}.
+Ils permettent d'avoir une idée générale de leur qualité.
+Dans le cadre de notre stage, pour choisir le modèle, nous avons expérimenté plusieurs méthodes d'évaluation.
+La première consistait en un système de notation. Un système de notation a également été utilisé dans le cadre de la sélection d'une méthode
+pour la réalisation du projet LlaMandement mentionné précédemment\footcite{gesnouin_llamandement_2024}. 
+En ce qui concerne le projet InventAIre, le système de notation s'est rapidement avéré subjectif 
+mais a permis d'éliminer les modèles les moins précis. Face à cette question de la subjectivité, les personnes chargées
+de l'évaluation sur le projet LlaMandement avaient dans leur corpus des résumés rédigés par des humains.
+La note moyenne octroyée à ces derniers s'est élevée à 16,5, ce qui donne plus de crédibilité à l'évaluation et donne une cible
+à atteindre par l'IA\footcite{gesnouin_llamandement_2024}.
+Après avoir expérimenté avec des notes, nous avons mis au point une évaluation comparative. 
+Nous comparions les titres et descriptions générés par plusieurs modèles sur une
+même unité de description afin d'établir un classement
+\footnote{Plus d'informations sur l'évaluation dans la note méthodologique en annexe (partie 2.3.1. et annexe 4 et 5)}. 
+Ce système garde une forme de subjectivité mais il est moins subjectif qu'un système de notation.
+Nous avons effectué le travail à l'envers par rapport à ce qui se fait normalement en \emph{machine learning}. 
+Un corpus de documents préalablement étiqueté est normalement séparé en deux parties, une pour l'entraînement, une pour la validation.
+Adopter cette approche, et ainsi avoir préalablement étiqueté des données de test, aurait poussé l'équipe à réfléchir davantage en amont afin de se mettre d'accord sur le contenu des différentes colonnes.
+Une forme de consensus est effectivement nécessaire pour l'étiquetage de données ou l'évaluation de performances.
+Par exemple, une donnée peut être considérée comme sensible par un archiviste et non par un autre.
+Sans lignes directrices précises, il peut y avoir autant d'inventaires que d'archivistes. Face à ce souci de subjectivité, nous avons 
+mis en place un système d'évaluation finale en trois possibilités : \enquote{correct}, \enquote{incorrect} et \enquote{sujet à débat/insuffisant}.
+À la Cour de cassation française, pour mener à bien le
+ projet de pseudonymisation, une \enquote{élaboration théorique des catégories et [une] définition des types de contentieux\footcite{girard-chanudet_travail_2023}} a été réalisée par des juristes, malgré tout, l'exécution 
+ des conseils donnés par les juristes est complexe dans la pratique. Certains termes peuvent appartenir à plusieurs catégories
+ ou bien à aucune des catégories définies par les juristes\footcite{girard-chanudet_travail_2023}. Il y a alors un dialogue qui se crée et 
+ certaines catégories sont précisées. Le fait d'étiqueter en amont est donc bénéfique pour amener la discussion et préciser les définitions
+ des différentes catégories ou données à repérer, ou bien pour préciser la forme et le contenu du texte à rédiger.
+ Un étiquetage des résumés et descriptions en amont aurait rendu l'exécution du projet InventAIre davantage productive.
+
+
+La précision n'est pas la seule métrique à laquelle nous nous sommes intéressée dans le cadre de notre stage.
+Nous avons également examiné le temps de génération, en calculant des moyennes par \gls{prompt}. Il aurait été davantage pertinent de mesurer le temps par \gls{token}
+dans le prompt, puisque ces derniers peuvent être de tailles différentes selon la taille du document qu'il inclut.
+Il y a une inférence par colonne de l'inventaire, et parfois plus d'une inférence par ligne dans le cas de documents longs qui, dépassant la capacité de la \gls{fenêtre} du \emph{LLM}, seraient divisés en plusieurs parties.
+Ce temps s'accumule vite et la génération d'un inventaire peut prendre des jours entiers si l'on n'y fait pas attention. Nous aurions aussi pu évaluer les ressources dépensées pour chaque inférence par la machine.
+
+Nous nous sommes enfin intéressée à l'évaluation des biais.
+Cette dernière est complexe. Il existe des \gls{benchmark}\textit{s} publics pour estimer à quel point les modèles les plus utilisés
+sont sujets au biais, ainsi que des \emph{datasets} publics pour tester les modèles maison ou affinés. C'est ce qui a été fait dans le cadre du projet
+LlaMandement. Le modèle fine-tuné a été testé sur le jeu de données spécialisé \emph{BOLD (Bias in Open-ended Language Generation Dataset)}.
+La réalisation de ce test suppose que les biais en français sont les mêmes qu'en anglais\footcite{gesnouin_llamandement_2024}, ce qui n'est pas forcément vrai.
+Des métriques de mesurant les biais ont par ailleurs été calculées. Il s'agit de \emph{Regard} et \emph{Honest}. 
+\emph{Regard} évalue la polarité du langage et les perceptions sociales de divers groupes démographiques 
+(par exemple selon le genre, l'appartenance ethnique et l'orientation sexuelle), en identifiant les biais dans le ton 
+ou avec une analyse des sentiments qui pourraient influencer la représentation de ces groupes\footcite{gesnouin_llamandement_2024}.
+ \emph{Honest} mesure la fréquence des complétions de phrases offensantes dans les modèles de langage,
+  en utilisant un lexique multilingue pour fournir un score de toxicité et détecter les disparités potentielles entre différents groupes démographiques\footcite{gesnouin_llamandement_2024}.
+\newline
+
+Les réflexions sur l'évaluation seront à pousser en cas de suite du projet InventAIre. 
+Il s'agit d'une étape qui se répète tout au long du projet. Elle doit être ainsi optimisée, voire rationalisée, pour éviter de perdre trop de temps.
+ Ces évaluations sont déterminantes dans le succès des projets et sont indispensables à la mise en production de systèmes basés sur de l'IA.
+
+

@@ -1,0 +1,244 @@
+\chapter{Problématiques éthiques et environnementales}
+
+	\subsection{Des risques sociaux et éthiques}
+
+	Les risques sont loin d'être nuls en ce qui concerne les systèmes basés sur le \emph{machine learning}. 
+	L'identification des risques est d\textquotesingle autant plus
+	complexe que la réglementation a souvent un temps de retard par rapport
+	aux avancées technologiques. À ce jour, il n\textquotesingle existe pas
+	de cadre spécifique pour l\textquotesingle IA dans les
+	archives. Se pose alors la question de la responsabilité en cas de
+	problème : doit-elle incomber à l\textquotesingle utilisateur, au
+	régulateur, au développeur, ou à la machine elle-même (si
+	l\textquotesingle on considère la possibilité d\textquotesingle une
+	personnalité juridique pour les systèmes d\textquotesingle IA) ? Les \gls{générative}s, en particulier, soulèvent plusieurs préoccupations. Nous
+	avons déjà abordé la nature souvent opaque des systèmes
+	d\textquotesingle IA, qualifiés de «~boîtes noires~», qui pose des défis
+	en termes de transparence.
+	
+	Les phénomènes d\textquotesingle \gls{hallucination}s, c'est à dire la
+	production d'informations incorrectes ou fictives par le modèle, sont
+	l\textquotesingle un des principaux dangers. Rappelons ici une nouvelle fois que les
+	grands modèles de langage sont des systèmes de génération de texte, et non de
+	transmission d'informations factuelles. Les résultats ne sont donc pas
+	toujours bons, les modèles peuvent «~halluciner~». Certains \textit{\gls{prompt}s} sont
+	plus susceptibles de générer des hallucinations, tels que des \textit{prompts}
+	dans une langue que le modèle maîtrise moins ou avec des fautes
+	d'orthographe ou de syntaxe. Bien qu'un \emph{prompt-engineering} efficace
+	puisse réduire ce risque, il ne l\textquotesingle élimine pas
+	complètement.
+	En outre, des informations «~périmées~» peuvent être données par les
+	modèles. Afin d'éviter ce risque, ces derniers doivent être évalués et réactualisés régulièrement sur des
+	données plus récentes.
+	
+	Loin de l'idée de neutralité parfois prônée en ce qui concerne les
+	outils numériques\footcite{girard-chanudet_travail_2023}, les biais, avec les risques de
+	discrimination ou de partialité constituent un danger important. Les
+	systèmes de \emph{machine learning} qui ne sont pas des IA génératives
+	partagent ces risques, causés en général par des biais dans les données
+	d'entraînement, qui peuvent mener à des décisions injustes ou
+	incorrectes. Une attention particulière doit ainsi être accordée à ces
+	données en cas de développement d'un modèle maison. Un exemple de
+	décision opaque et potentiellement basée sur un biais est le calcul d'un
+	crédit vingt fois supérieur pour une femme par rapport à son mari par
+	Apple en 2019\footcite{vigdor_apple_2019}.
+	Dans le cas d'un usage en contexte archivistique, ces biais peuvent
+	entraîner l'invisibilisation de certaines communautés, dont les archives
+	pourraient être jugées de moindre valeur car sous-représentées dans les
+	données d'entraînement, ou bien, à défaut d'être éliminées, l'indexation
+	de ces archives peut s'avérer insuffisante. Cette invisibilisation de
+	communautés minoritaires constitue un enjeu archivistique plus large.
+	Les archives de ces dernières ont parfois été négligées ou détruites,
+	contribuant à un effacement de leurs mémoires, ou leur description n'est pas assez précise,
+	le vocabulaire qui leur est relatif n'étant pas inclus dans les thésaurus.
+	L'un des cas les plus documentés en France est celui des archives des luttes contre le SIDA
+	et des luttes LGBTQIA+. Les Archives nationales ont collecté les archives de l'association
+	Act Up Paris mais de nombreuses archives d'autres associations ont été détruites\footcite{comoy_archives_2019}.
+	Certains modèles d'IA semblent moins sujets aux biais que
+	d'autres. Par exemple, \emph{Claude}, développé par la société
+	Anthropic, a été conçu avec davantage de considérations
+	éthiques.
+	Ce modèle est utilisé par le Parlement européen pour son
+	\emph{Archibot}. Claude est un agent \gls{multimodal} capable de traiter
+	une grande quantité de texte. La version 2.1 lancée en novembre 2023
+	accepte 200 000 \gls{token}\emph{s} en entrée, soit environ 150 000 mots.
+	Anthropic a développé le concept d'\enquote{IA constitutionnelle}. 
+	Cette dernière repose sur des principes éthiques clairs, une forme de constitution inspirée par
+	des textes tels que la \emph{Déclaration universelle des droits de l'Homme}.
+	Pendant deux phases d'apprentissage, le modèle évalue ses propres réponses en fonction de cette constitution et
+	essaie de réduire le contenu potentiellement nocif de ses réponses\footcite{bai_constitutional_2022}.
+	L'avantage de ces deux phases d'entraînement spécialisées est une perte de qualité moindre par rapport à un entraînement général pour générer du contenu inoffensif, puisque les réponses sont évaluées et modifiées une fois générées. Bien qu\textquotesingle il
+	soit présenté comme plus éthique et performant, Claude n'est pas complètement exempt
+	de biais ni d'hallucinations\footcite{priyanshu_ai_2024}.
+	Développer des modèles véritablement impartiaux est un grand enjeu et
+	revêt de grandes difficultés~: compte tenu de l'ampleur des données
+	nécessaires à l'entraînement de ces modèles, elles ont de grandes
+	probabilités de présenter des biais. Les biais linguistiques constituent
+	une autre source de préoccupation. Les corpus d'entraînement des gros
+	modèles d'IA génératives sont souvent dominés par des contenus en
+	anglais, rendant ainsi d'autres langues moins visibles. Le
+	luxembourgeois et les données sur le Luxembourg sont en général
+	extrêmement minoritaires. À titre d'exemple, le modèle Llama 3 de meta
+	est entraîné sur 95~\% de données en anglais\footcite{meta}. Cette
+	domination linguistique peut rendre certains pays ou communautés, et
+	ainsi cultures, invisibles dans les modèles généraux. Dès lors, les
+	états peuvent être tentés de rendre leurs données facilement accessibles
+	sur le web pour être visibles et prises en compte par ces modèles.
+	Toutefois, il s\textquotesingle agit d\textquotesingle un choix
+	stratégique et politique complexe : ils peuvent ne pas
+	souhaiter contribuer à l'entraînement de gros modèles développés par de
+	grandes entreprises étrangères. 
+	%Citer rapport
+
+	En outre, la génération automatique de contenu par les IA soulève des
+	questions juridiques concernant le droit d'auteur et le plagiat. Les
+	grand modèles d'IA générative sont entraînés sur du contenu disponible
+	sur le web, qui peut par exemple contenir des données personnelles, ou
+	bien des œuvres originales soumises au droit d'auteur. En effet, toutes les données qui peuvent être collectées le sont, dans l'optique d'améliorer les performances des modèles\footcite{crawford_contre-atlas_2023}. Ce contenu sensible
+	pourrait ressortir au moment de l'\gls{inference}. 
+	
+	
+	Pour atténuer ces risques, plusieurs solutions ont été proposées au fil de ce mémoire, telles
+	que la documentation rigoureuse des projets,
+	l\textquotesingle analyse préalable des risques, et des évaluations
+	régulières des modèles pour détecter et corriger les informations
+	périmées.
+	
+	Un dernier risque concerne les modèles hébergés dans le \emph{cloud}.
+	Leur usage s'accompage d'une transmission de données à un tiers, la société 
+	qui héberge le modèle. Il est donc important de veiller à éviter la transmission 
+	de données confidentielles sans vérifications préalables. Si un projet IA traite des données sensibles,
+	le modèles devront être installés localement dans l'administration ou chez
+	 un tiers de confiance. 
+	 Cette installation locale demande des moyens matériels importants et 
+	 a par conséquent un impact écologique non-négligeable.
+	
+
+	\subsection{Besoins matériels et impact écologique}
+		
+	
+	Pendant notre stage, des limitations matérielles se sont rapidement
+	faites ressentir, notamment dès les premiers tests de \gls{clustering}
+	lorsque nous travaillions avec un trop grand nombre de documents à la
+	fois. La Chambre des Députés a dû investir dans un ordinateur et une
+	carte graphique (GPU) pour que nous puissions travailler avec des
+	modèles de \emph{machine learning} volumineux. Les spécifications de la machine
+	achetée sont les suivantes~:
+	\begin{quote}
+		OS : Windows\newline
+		RAM : 64 GB\newline
+		GPU : Nvidia RTX A4000
+	\end{quote}
+	Avec cet ordinateur et cette carte graphique, nous étions en mesure de
+	réaliser des inférences avec des moyens et grands modèles de langage.
+	Pour éviter que l\textquotesingle inférence ne soit trop lente, nous
+	avons appliqué une \gls{quantization} au modèle LlaMa 3. 
+	C'est une technique de compression qui réduit la précision des calculs internes pour accélérer les inférences tout en maintenant des performances acceptables. L'outil développé pendant notre stage intègre une quantisation 4 bits pour les titres et les descriptions et 8 bits pour le repérage des données sensibles. La quantization 4 bits réduit la représentation numérique des poids des modèles, c'est-à-dire les paramètres internes du réseau de neurones qui sont ajustés pendant l'entraînement, à 16 niveaux distincts (2\up{4}), tandis que la quantization 8 bits utilise 256 niveaux (2\up{8}).
+	%C'est à dire défnote. 
+	% Stats perte de précision. 
+	Nous avons observé que le temps
+	d\textquotesingle inférence pour chaque \gls{prompt} était
+	d\textquotesingle environ deux secondes avec une quantisation à 4 bits
+	et d\textquotesingle une dizaine de secondes avec une quantisation à 8
+	bits. Ces chiffres sont cependant relativement arbitraires puisqu'ils
+	dépendent de facteurs très divers, notamment la longueur du prompt et de la
+	réponse à produire. Un calcul plus précis du temps de traitement par
+	\gls{token} aurait permis d\textquotesingle obtenir des mesures moins
+	approximatives. Pour les tâches de génération de titres et descriptions, nous avons
+	privilégié la quantisation à 4 bits, car la perte de précision par
+	rapport à la quantisation à 8 bits était négligeable. En revanche, pour
+	les prompts de repérage des données sensibles, nous avons utilisé la
+	quantisation à 8 bits. Pour faire tourner des très grands modèles de
+	langage à pleine puissance, un seul exemplaire de notre carte graphique
+	n'aurait pas suffi, de même que pour le \gls{fine-tuning} de \gls{LLM}. Le
+	développement de modèles maison peut être moins demandant en ressources
+	mais l'investissement dans un GPU reste indispensable. 
+	
+	Cette nécessité
+	de recourir à des machines puissantes rend l'impact environnemental de
+	l'IA non négligeable, tant en termes de consommation
+	d\textquotesingle énergie pour l\textquotesingle inférence
+	qu\textquotesingle en raison de la nécessité d'investir dans des
+	ordinateurs puissants. Le \emph{Contre-atlas de l'Intelligence artificielle} écrit par la chercheuse australienne Kate Crawford
+	fournit un détail des enjeux écologiques de l'IA\footcite{crawford_contre-atlas_2023}.
+	Les ressources nécessaires à la fabrication de matériel informatique sont
+	tout d'abord très importantes. Il faut du lithium pour construire les batteries
+	des ordinateurs et les batteries de secours pour l'alimentation des centres de données.
+	Ce métal provient de mines situées à des endroits géographiques divers, comme le 
+	Congo, la Bolivie ou la Mongolie.
+	D'autres minéraux entrent dans la composition de matériel en plus du lithium.
+	Dix-sept composants fossiles rares utilisés dans la production de matériel informatique
+	sont en effet identifiés par Kate Crawford\footcite{crawford_contre-atlas_2023}.
+	L'extraction de ces minéraux fossiles pose de nombreux problèmes éthiques.
+	Au Congo par exemple, l'extraction du lithium est source de conflit.
+	Des milices armées se battent pour le contrôle des mines. Les personnes chargées
+	de l'extraction sont par ailleurs souvent exploitées et effectuent un travail dangereux.
+	Le matériel informatique utilisé pour produire des modèles d'IA ou les faire tourner est fabriqué à partir de matériaux nombreux quoi doivent être acheminés. Leur extraction et le processus d'assemblage
+	sont également sources de pollution.
+	A titre d'exemple, la chaîne d'approvisionnement de l'entreprise Intel comporterait plus de onze mille fournisseurs
+	dans plus de quatre-vingt-dix pays\footcite{noauthor_etude_2022}.
+
+	
+	Le développement de modèles maison plus légers a un impact écologique
+	moins important que le développement de grands modèles de langage mais
+	cet impact demeure. Les processus d'étiquetage des données, de
+	développement et d'inférence nécessitent des ressources matérielles.
+	L\textquotesingle entraînement des modèles, en particulier, requiert des
+	machines qui fonctionnent pendant des heures, voire des jours. Dans le
+	cas des \gls{LLM}, il se fait dans de grands \emph{datacenters} qui
+	consomment beaucoup d\textquotesingle électricité et d'eau, principalement pour assurer le refroidissement des ordinateurs. 
+	Les entreprises qui produisent des gros modèles ont à cœur de
+	\enquote{maximiser les cycles computationnels pour améliorer la  performance}\footcite{crawford_contre-atlas_2023}, or, ces cycles consomment énormément d'énergie.
+	Dans des pays comme la Chine, les \emph{datacenters} sont approvisionnés par de l'électricité majoritairement produite à partir du charbon\footcite{crawford_contre-atlas_2023}, ce qui génère beaucoup de pollution.
+	
+	Une des solutions envisagées pour limiter cet impact
+	est l'utilisation de modèles avec le moins de paramètres possibles. De
+	nombreuses entreprises travaillent actuellement à la réduction de la
+	taille des grands modèles de langage, cherchant à développer des modèles
+	plus compacts mais tout aussi performants. Cette approche pourrait
+	réduire les coûts énergétiques et matériels, mais elle comporte aussi un
+	risque d\textquotesingle effet rebond\footcite{guillory_impacts_2024} ou de paradoxe de Jevons~: 
+	la facilité d\textquotesingle utilisation et la légèreté de ces
+	modèles pourraient inciter davantage d\textquotesingle acteurs à les
+	déployer sur leurs systèmes, entraînant une augmentation globale de la
+	consommation de ressources. Bien que certains tentent de 
+	mettre en avant des impacts écologiques positifs
+	de l\textquotesingle IA, notamment pour la surveillance du changement
+	climatique ou l\textquotesingle amélioration de
+	l\textquotesingle efficacité des processus, ces avantages sont souvent
+	contrebalancés par leur consommation en ressources ou des potentiels effets rebond. Lorsque des
+	tâches sont optimisées, de nouvelles tâches émergent par ailleurs pour remplacer les
+	précédentes. Les avantages potentiels de l\textquotesingle IA ne
+	compensent pour l'instant pas son empreinte carbone, en particulier celle de l'IA générative.
+	
+	Face à ces enjeux éthiques et écologiques, Yannick Meneceur propose un
+	ralentissement~: «~les impacts sociétaux et environnementaux majeurs de
+	la transformation numérique de notre société nous imposeraient donc, de
+	manière raisonnable, de commencer à ralentir au lieu de chercher à tout
+	prix à accélérer\footcite{meneceur_trois_2021}~»,
+	selon lui, il faudrait «~réserver le recours aux algorithmes à des
+	besoins sectoriels très déterminés, avec une forte valeur ajoutée
+	sociétale\footcite{meneceur_trois_2021}~».
+	On peut argumenter que les archives ont une grande valeur ajoutée
+	sociétale, surtout dans un monde où la gouvernance de l'information
+	prend de plus en plus de place mais au Luxembourg 
+	et dans bien d'autres pays, cette valeur n'est
+	pas forcément reconnue. Dans le cadre d'une course à l'IA et
+	d'un grand engouement, les projets se multiplient et leur objectif
+	est de produire des résultats, peu importe leur forme et les cas
+	d'usage. Il serait bénéfique pour les administrations de réfléchir à des
+	moyens de mener ces derniers de manière responsable. Il est important de
+	sensibiliser les acteurs aux impacts écologiques de l'IA et du
+	numérique en général. L'organisation de \emph{cleaning days} se fait de
+	plus en plus dans les archives. Une journée mondiale «~du nettoyage
+	numérique~»,
+	le \emph{Digital Cleanup Day}, a été créée en 2019. Lorsqu'ils sont organisés
+	par les archivistes, les \emph{cleaning days} permettent une double
+	sensibilisation du personnel des administrations, à la fois à
+	l'archivage et à l'empreinte environnementale du numérique. La
+	sensibilisation individuelle est-elle toutefois suffisante~? Est-ce
+	qu'il faut attendre des innovations technologiques plus vertes et éthiques ou une régulation par
+	les pouvoirs publics pour diminuer les impacts causés par l'IA et le
+	numérique ? Les réponses à ces questions demanderaient bien plus de
+	recherches que celles nous avons eu le temps de mener.
+	

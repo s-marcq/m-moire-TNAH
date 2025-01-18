@@ -1,0 +1,46 @@
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{Résumé}{i}{chapter*.1}%
+\contentsline {chapter}{Remerciements}{iii}{chapter*.2}%
+\contentsline {chapter}{Bibliographie}{v}{chapter*.3}%
+\contentsline {chapter}{Introduction}{xv}{chapter*.12}%
+\contentsline {part}{I\hspace {1em}Un contexte public luxembourgeois propice au lancement de projets IA dans les archives malgré la complexité de leur mise en place}{1}{part.1}%
+\contentsline {chapter}{\numberline {1}Un contexte européen et luxembourgeois favorable au développement de projets IA dans le secteur public}{3}{chapter.1}%
+\contentsline {subsection}{\numberline {1.}Ambitions et bénéfices pour les administrations publiques}{3}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {2.}La mise en place d'un cadre propice au développement de l'IA dans les institutions publiques}{6}{subsection.1.0.2}%
+\contentsline {subsection}{\numberline {3.}Le cas des parlements~: vers les premières mises en production d'outils basés sur l'IA}{9}{subsection.1.0.3}%
+\contentsline {chapter}{\numberline {2}Les archives au Luxembourg~: législation récente et traitements urgents qui poussent vers l’exploration de moyens d’automatisation}{13}{chapter.2}%
+\contentsline {subsection}{\numberline {1.}Un cadre légal récent}{13}{subsection.2.0.1}%
+\contentsline {subsection}{\numberline {2.}Les enjeux des archives numériques~: un territoire peu exploré et de nouvelles données à appréhender}{17}{subsection.2.0.2}%
+\contentsline {chapter}{\numberline {3}Prérequis et points d’attention pour le pilotage de projets d’automatisation via l’IA dans les archives}{25}{chapter.3}%
+\contentsline {subsection}{\numberline {1.}Des besoins métier multiples mais des cas d'usage à préciser}{25}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {2.}Optimiser la gestion de projets IA dans les archives : réflexions et défis}{28}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {3.}Gestion des risques et défis éthiques des systèmes basés sur le \emph {machine learning}}{33}{subsection.3.0.3}%
+\contentsline {part}{II\hspace {1em}Les apports des projets IA dans les archives : perspectives, état des lieux et synergies}{37}{part.2}%
+\contentsline {chapter}{\numberline {4}Des solutions légères de \emph {machine learning} pour les archives}{39}{chapter.4}%
+\contentsline {subsection}{\numberline {1.}\gls {TAL} pour la classification~: \emph {clustering} et \gls {topic}}{39}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {2.}La reconnaissance d'entités nommées}{44}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {3.}Le traitement automatique sur les images}{46}{subsection.4.0.3}%
+\contentsline {subsection}{\numberline {4.}Des usages sur les tâches aux impacts moins élevés~: recherche, indexation et \gls {découvrabilité}}{48}{subsection.4.0.4}%
+\contentsline {chapter}{\numberline {5}Les grands modèles de langage~: un moyen efficace d'automatisation de tâches archivistiques ?}{51}{chapter.5}%
+\contentsline {subsection}{\numberline {1.}Les promesses des \gls {LLM}}{51}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {2.}La réalité archivistique~: les possibilités d'automatisation dans les processus métier}{53}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {3.}Au delà des usages métier~: RAG, recherche et médiation}{57}{subsection.5.0.3}%
+\contentsline {chapter}{\numberline {6}Au-delà de l'automatisation, des apports connexes~: exploration des données, collaboration et visibilité}{61}{chapter.6}%
+\contentsline {subsection}{\numberline {1.}La quête des données d'entraînement : exploration en profondeur des données et découverte de silos à décloisonner}{61}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {2.}Des apports moins techniques : des projets qui renforcent les liens entre les services et apportent une visibilité sur le monde des archives}{66}{subsection.6.0.2}%
+\contentsline {chapter}{\numberline {7}Ce que les archives peuvent apporter à l'IA}{69}{chapter.7}%
+\contentsline {subsection}{\numberline {1.}Maîtrise des normes, données structurées et classées}{69}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {2.}Une certaine maîtrise de la description : l'opportunité de renforcer la transparence des données produites par les algorithmes}{71}{subsection.7.0.2}%
+\contentsline {part}{III\hspace {1em}Les défis éthiques et techniques du déploiement de systèmes basés sur l'IA}{75}{part.3}%
+\contentsline {chapter}{\numberline {8}Problématiques éthiques et environnementales}{77}{chapter.8}%
+\contentsline {subsection}{\numberline {1.}Des risques sociaux et éthiques}{77}{subsection.8.0.1}%
+\contentsline {subsection}{\numberline {2.}Besoins matériels et impact écologique}{79}{subsection.8.0.2}%
+\contentsline {chapter}{\numberline {9}Un processus d'évaluation long et nécessitant des connaissances techniques}{83}{chapter.9}%
+\contentsline {subsection}{\numberline {1.}Un processus itératif complexe à mettre en place}{83}{subsection.9.0.1}%
+\contentsline {subsection}{\numberline {2.}Quelles métriques d'évaluation pour des tâches liées au langage ?}{86}{subsection.9.0.2}%
+\contentsline {chapter}{\numberline {10}Problématiques de mise en production}{91}{chapter.10}%
+\contentsline {subsection}{\numberline {1.}Une \gls {chaîne} à mettre en place}{91}{subsection.10.0.1}%
+\contentsline {subsection}{\numberline {2.}Interface et intégration à la chaîne archivistique}{97}{subsection.10.0.2}%
+\contentsline {subsection}{\numberline {3.}De l'informatique recherche au déploiement}{100}{subsection.10.0.3}%
+\contentsline {chapter}{Conclusion}{104}{chapter*.16}%
+\contentsline {chapter}{Glossaire}{105}{section*.17}%

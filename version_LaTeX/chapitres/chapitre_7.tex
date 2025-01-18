@@ -1,0 +1,249 @@
+\chapter{Ce que les archives peuvent apporter à l'IA}
+
+\subsection{Maîtrise des normes, données structurées et	classées}
+
+	
+	L'IA a beaucoup à apporter aux archives et aux autres domaines dans les
+	administrations, mais le monde des archives a également beaucoup à
+	apporter à l'IA. Comme évoqué précédemment, des données bien structurées
+	dans un système d'information efficace sont un atout pour le
+	développement de modèles de \emph{machine learning}. De par les grandes
+	quantités de documents conservés par les services d'archives et leurs
+	habitudes de structuration de ces données, les relations peuvent être
+	bilatérales entre IA et archives. Non seulement l'intelligence
+	artificielle offre la possibilité d'automatiser des traitements
+	archivistiques, mais le monde des archives peut aussi être un fournisseur
+	privilégié de données d'entraînement structurées. Tout d'abord, les
+	données sont disponibles en grandes quantités. Le site internet des Archives
+	nationales du Luxembourg mentionne quarante-cinq kilomètres linéaires de documents
+	d'archives papier et vingt-cinq mille microfilms répartis entre onze groupes de
+	fonds décrits\footnote{ANLux, \enquote{Fonds et collections},
+		\textsc{URL}~: \url{https://anlux.public.lu/fr/rechercher/fonds-collections.html}}.
+	Il n'y a pas d'information sur les archives nativement numériques. En
+	France, aux Archives nationales, «~253 applications informatiques, 94
+	114 910 fichiers de bureautique générés par des traitements de texte, 94
+	382 photos numériques ou enregistrements sonores et audio numériques~»
+	auraient été collectés entre 1983 et 2015\footnote{FranceArchives, \enquote{Panorama des archives électroniques conservées aux Archives nationales}, 
+		\textsc{URL}~: \url{https://francearchives.gouv.fr/findingaid/b4bac9c0ed8ffa3f2451fbe6f6cb4c65f5a4e753/}}.
+	Le site internet des Archives nationales américaines mentionne quant à
+	lui plus de trente-trois milliards de documents d'archives électroniques, soit 
+	huit cent trente-sept
+	tera\footnote{National Archives, \enquote{National Archives by the numbers}, \textsc{URL}~: \url{https://www.archives.gov/about/info/national-archives-by-the-numbers}}.\newline
+	
+	Les archives conservent non seulement de grandes quantités de documents classés, mais le domaine a également une longue tradition de description, d'abord sous la forme d'inventaires.
+	Des normes de description archivistique ont ensuite émergé à partir des années 1980, notamment dans le monde
+	anglo-saxon, sous l\textquotesingle influence des bibliothèques. En
+	1989, le Conseil international des archives (\emph{ICA}) a convoqué des experts pour établir un plan
+	d\textquotesingle action international sur la normalisation des
+	pratiques archivistiques. Au cours des années 1990,
+	l\textquotesingle intérêt pour ces normes a progressivement augmenté,
+	donnant lieu à l\textquotesingle introduction d'une première norme
+	internationale, l'ISAD(G), en 1993\footcite{nougaret_vers_1995}. Elle avait pour but d'améliorer
+	l\textquotesingle efficacité des pratiques archivistiques, de
+	professionnaliser le métier d\textquotesingle archiviste, en permettant
+	notamment d'uniformiser les méthodes
+	d\textquotesingle enseignement\footcite{motte_normalisation_2015}.
+	L'introduction de normes visait également à offrir une présentation homogène des archives
+	pour le public, à faciliter la coopération entre institutions et à
+	rationaliser le travail des archivistes\footcite{motte_normalisation_2015}. Cette approche
+	de rationalisation est comparée au taylorisme et au fordisme par les
+	archivistes Bénédicte Grailles et Laurent Ducol dans un article publié
+	dans la \emph{Gazette des archives} en 2012\footcite{grailles_enjeux_2012}.
+	Par ailleurs, d'après Céline Guyon, maîtresse de conférence associée à
+	l'ENSSIB, «~la pratique archivistique s'est nourrie des innovations
+	technologiques qui, en retour, ont contribué à sa
+	normalisation\footcite{guyon_archivistique_2022}~». Les outils informatiques de traitement auraient
+	entraîné cette normalisation et une homogénéisation des
+	pratiques\footcite{guyon_archivistique_2022}. Nous avons pu voir que la normalisation répond aussi à
+	des problématiques d'efficacité, néanmoins, les formats numériques
+	normés sont surtout nés par besoin de communication entre les systèmes. Ils ont
+	permis d'accroître l'interopérabilité entre services.
+	L\textquotesingle \emph{EAD} (\emph{Encoded Archival Description}) a
+	été développé dès 1993 en s\textquotesingle inspirant des bibliothèques
+	et de leur format MARC et a permis de répondre à des besoins de
+	diffusion d'instruments de recherche sur internet\footcite{dooley_encoded_1997}.
+	Depuis, d\textquotesingle autres normes sont apparues, telles que
+	\emph{RiC (Records in Context)}, dont la version 1.0 a été publiée en mai 2024, ou le
+	SEDA (Standard d'Échange de Données pour l'Archivage), norme
+	française d'interopérabilité utilisé pour le traitement d'archives
+	nativement numériques. Ces normes sont basées sur des langages de
+	structuration de données spécifiques. Les plus
+	récurrents sont l'XML et le JSON.
+	L'EAD est par exemple un format basé sur l'XML. 
+	
+	L\textquotesingle interopérabilité est
+	une préoccupation dans le domaine archivistique. En France, le format
+	EAD est poussé par la plateforme \emph{FranceArchives} pour
+	garantir cette dernière et ainsi produire un portail unique contenant
+	des instruments de recherche de plus d'une centaine partenaires. Les
+	Archives nationales du Luxembourg produisent également des instruments
+	de recherche en EAD pour certains de leurs fonds, notamment
+	numériques. Cependant, les normes n'existent pas partout. À la Chambre
+	des Députés, l\textquotesingle adoption de normes est encore en
+	réflexion. L\textquotesingle inventaire des Archives nationales peut
+	constituer une forme de normalisation, même si un fichier Excel
+	n\textquotesingle est pas très interopérable.
+	
+	La production de données structurées dans les archives facilite 
+	l\textquotesingle entraînement et les tests de modèles
+	d\textquotesingle IA. La question de l\textquotesingle entraînement des
+	grands modèles de langage sur les données des bibliothèques en ligne a
+	déjà été débattue, notamment autour de la problématique du droit
+	d'auteur. Elle ne s\textquotesingle est pas encore posée de manière
+	significative pour les archives. Néanmoins, avec les vastes quantités de
+	texte disponibles dans les fonds, qu\textquotesingle ils soient
+	numérisés ou nativement numériques, et la normalisation de la
+	description archivistique, cette question pourrait se poser davantage à
+	l\textquotesingle avenir. Il faudra déterminer dans quelle mesure il est
+	souhaitable que les archives contribuent à
+	l\textquotesingle entraînement des modèles d\textquotesingle IA,
+	notamment ceux développés par des grandes entreprises privées hors UE. Une des
+	premières questions à se poser concerne l\textquotesingle accès à ces
+	données. Faut-il les intégrer dans des initiatives
+	d\textquotesingle \emph{open data}, permettant ainsi un accès libre et gratuit
+	pour le développement de modèles d\textquotesingle IA, ou au contraire,
+	envisager une monétisation de cet accès, en négociant avec les
+	entreprises souhaitant utiliser ces données pour entraîner leurs modèles
+	? Cette décision aura un impact direct sur la visibilité et
+	l\textquotesingle utilisation des données nationales dans des outils
+	largement utilisés par le grand public. Si ces données ne sont pas
+	intégrées dans les corpus d\textquotesingle entraînement des modèles les
+	plus répandus, il y a un risque que le patrimoine documentaire du pays
+	soit sous-représenté, voire invisible. Une ouverture totale des données
+	pourrait offrir plus de visibilité sur les archives. Cependant, cela
+	nécessite de faire la balance entre les enjeux économiques, culturels et
+	éthiques. La protection des droits d\textquotesingle auteur, la
+	confidentialité des données sensibles et l\textquotesingle équilibre
+	entre partage et exploitation sont autant de facteurs à prendre en
+	compte. Le monde des archives a ainsi du potentiel pour enrichir celui de
+	l'intelligence artificielle grâce à ses données structurées et
+	normalisées, dans un monde où l'information prend de plus en plus de
+	valeur.
+	
+
+\subsection{Une certaine maîtrise de la description : l'opportunité de renforcer la transparence des données produites par les algorithmes}
+	
+	D'après Herbjørn Andresen, professeur d'archivistique à l'université
+	d'Oslo, dans un article intitulé «~A discussion frame for explaining
+	records that are based on algorithmic output~» publié en 2019, le
+	contenu généré par des algorithmes est difficilement explicable. Il est
+	complexe à analyser dans le cadre du \emph{records management},
+	pourtant, son explicabilité est en partie une obligation
+	légale\footcite{andresen_discussion_2019}. En effet, l'article 13 du
+	RGPD oblige la transparence «~des informations utiles concernant la
+	logique sous-jacente, ainsi que l\textquotesingle importance et les
+	conséquences prévues de ce traitement pour la personne concernée~» en
+	cas de prise de décision automatisée dans le traitement des données
+	personnelles\footcite{noauthor_reglement_nodate}.
+	Herbjørn Andresen aborde également dans son article l'émergence de la
+	question de l'éthique algorithmique. Les algorithmes nécessitent des
+	explications contextuelles. L'auteur propose la réalisation de
+	recherches sur les concepts de description provenant du \emph{records
+		management} qui resteraient applicables et ceux qui seront à
+	développer\footcite{andresen_discussion_2019}. Des réflexions sont donc à mener sur la description
+	archivistique des documents et données produites par des modèles
+	d'intelligence artificielle.\newline
+	
+	Une documentation technique est en général établie lors du développement
+	de systèmes informatiques. Elle sert à la correction de bugs par les
+	équipes de développement, à réinstaller les applications sur d'autres machines ou
+	à adapter les systèmes à de nouveaux environnements. C'est ce que nous
+	avons cherché à accomplir avec la documentation de l'application codée
+	dans le cadre du projet \emph{InventAIre} en produisant une
+	documentation technique aussi précise que possible. Cependant, avec le
+	recul, il apparaît que cette documentation aurait pu être encore plus
+	détaillée, notamment pour améliorer la transparence de l'outil. Il est
+	également important d'informer le lecteur ou la lectrice que les
+	inventaires ont été produits par IA. Cela pourrait inclure des
+	métadonnées précisant qu'ils ont été générés par une IA, des filigranes
+	ou des informations intégrées directement dans les fichiers JSON et
+	Excel produits. Nous aurions pu mettre à profit nos connaissances
+	archivistiques et celles de notre équipe. La description archivistique
+	peut en effet être complémentaire à la documentation technique pour ce
+	genre de données. C'est également l'avis de Jenny Bunn, qui prône une
+	collaboration entre \emph{records managers} et informaticiens afin de réfléchir
+	à une \enquote{intelligence artificielle explicable}\footcite{bunn_working_2020}.
+	D'après la chercheuse, des concepts se recoupent entre intelligence
+	artificielle explicable et \emph{records management}, même s'ils ne sont pas définis
+	exactement de la même façon. C'est le cas par exemple des concepts de la
+	transparence, de la confiance et de la responsabilité\footcite{bunn_working_2020}. Un
+	des objectifs des services à travers la communication des archives est
+	effectivement de garantir la transparence de l'administration. Cette
+	sensibilité s'étend naturellement aux données ouvertes. Par exemple, les
+	Archives nationales du Luxembourg publient leurs tableaux de tri sur la
+	plateforme nationale \emph{open data}, renforçant ainsi l'accès et la
+	transparence des informations. La mise à disposition des corpus
+	d'entraînement des modèles développés ou affinés sur ce genre de
+	plateformes peut être un pas vers plus de transparence en permettant
+	une meilleure compréhension de ces derniers et l'identification de leurs
+	éventuelles failles. Certaines peuvent effectivement être dues à des biais dans les données.
+	Cette mise à disposition nécessite néanmoins que les modèles soient
+	entraînés sur des données non-confidentielles.
+	
+	L'article de Jenny Bunn mentionne par ailleurs que les \emph{records managers} ont
+	l'habitude de décrire précisément les producteurs et les contextes de
+	production\footcite{bunn_working_2020}. La théorisation du principe de producteur
+	émerge en relation avec la notion de fonds au XIX\up{e} siècle avec Natalis
+	de Wailly, historien et archiviste\footcite{guyon_theorie_2023}. Il
+	théorise en effet le concept de fonds et définit le respect des fonds
+	dans une circulaire du 24 avril 1841~: il s'agit de «~rassembler les
+	documents par fonds, c\textquotesingle est-à-dire réunir tous les titres
+	qui proviennent d\textquotesingle un corps, d\textquotesingle un
+	établissement, d\textquotesingle une famille ou d\textquotesingle un
+	individu\footnote{Michel Duchein, \enquote{Le respect des fonds en archivistique : principes théoriques et problèmes pratiques}, \emph{La Gazette des archives}, 97, (1977), p. 71-96.}~». Les archives doivent donc rester
+	rassemblées par producteur. Or, dans le cas des archives numériques,
+	cette notion de producteur est vouée à évoluer. Les principes
+	fondamentaux de l'archivistique française tels que le respect des fonds
+	et la théorie des trois âges sont à questionner\footcite{guyon_theorie_2023}. Les pratiques luxembourgeoises ont l'opportunité de se nourrir
+	de ces habitudes de description au sein des modèles français, mais
+	également de les questionner et de se nourrir d'autres pratiques.
+	L'archivistique canadienne, à travers les réflexions de Terry Cook,
+	prône par exemple l'idée que le fonds est un concept bien lié à la provenance
+	des documents, mais que la provenance n'est pas seulement liée au
+	producteur, d'autant plus en ce qui concerne les données numériques,
+	parfois manipulées par plusieurs producteurs : la provenance est liée à un processus
+	métier\footnote{Terry Cook, \enquote{Mind over Matter: Towards a New Theory of Archival Appraisal}, in Barbara L. Craig  (dir), \emph{The Archival Imagination}, 1992, p. 38-70.}. La description du processus métier est donc
+	une perspective intéressante en ce qui concerne la description des
+	archives numériques, des archives produites par IA et des systèmes IA
+	eux-mêmes.\newline
+	
+	De nombreuses questions se posent et les théories archivistiques françaises sont vouées à connaître des évolutions. En ce qui
+	concerne les pratiques luxembourgeoises, il y a là une opportunité de se
+	nourrir de ces pratiques françaises, mais surtout de les questionner, et
+	de tirer parti d\textquotesingle autres approches, notamment des
+	approches anglo-saxonnes. Le monde des archives et de l'informatique
+	peuvent s'apporter mutuellement. Les professionnels des archives peuvent
+	apporter leur sensibilité et expertise sur les questions d'explicabilité
+	et de transparence au monde de l'informatique. Il est cependant
+	important de noter que les pratiques de description et de classement des
+	archives numériques ne sont pas encore fixes et peu théorisées à ce
+	jour. Les discussions seront davantage prolifiques quand elles l'auront été. Inversement, la meilleure compréhension des outils développés et
+	les pratiques de documentation technique issues du monde de
+	l\textquotesingle informatique peuvent enrichir les approches
+	archivistiques. La combinaison entre procédure de documentation technique et
+	méthodologie archivistique, avec par exemple une description du contexte,
+	du producteur et du processus métier, est un pas vers plus de
+	transparence des systèmes IA. Mettre à disposition les données utilisées
+	pour l\textquotesingle entraînement et l\textquotesingle affinage des
+	modèles, selon les principes de l\textquotesingle \emph{open data}, est
+	également une voie à explorer, bien que cela pose des défis en ce qui
+	concerne les modèles pré-entraînés et les questions de confidentialité
+	des données. L\textquotesingle explicabilité de l\textquotesingle IA ne
+	sera jamais parfaite en raison de la complexité inhérente à ces
+	technologies mais l\textquotesingle intégration de principes
+	archivistiques dans le développement et la gestion des systèmes IA
+	pourrait contribuer à améliorer la transparence et la confiance.\newline
+	
+
+	Pour conclure cette deuxième partie, l'intelligence artificielle a
+	beaucoup de potentiel dans le domaine des archives, tant pour
+	l'automatisation de processus que pour la recherche et la médiation avec
+	le public. Les usages sont très divers et il est facile de s'y perdre.
+	Archives et IA peuvent s'apporter mutuellement~: la technologie peut répondre à
+	des besoins métier et les archives sont des sources de données
+	structurées non négligeables, avec des intérêts similaires pour la
+	transparence. En revanche, la complexité de mise en place d'outils
+	pérennes et utiles pour les archivistes basés sur de l'IA est parfois
+	sous-estimée car le potentiel séduisant de ces technologies a tendance à
+	occulter les défis qu'elles impliquent.
+	

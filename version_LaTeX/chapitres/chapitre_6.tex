@@ -1,0 +1,318 @@
+\chapter{Au-delà de l'automatisation, des apports connexes~: exploration des données, collaboration et visibilité}
+
+\subsection{La quête des données d'entraînement : exploration en profondeur des données et découverte de silos à décloisonner}
+
+
+	Dans la première partie du projet InventAIre, avant de choisir une
+approche et de réaliser les premier tests de \emph{machine learning},
+nous avons dû regrouper des données d'entraînement et de tests. Nous
+avons déjà abordé le fonds bureautique du Service des relations
+européennes et internationales et du protocole (SREIP) qui a été mis à
+disposition. Nous avons tenté d'obtenir d'autres documents auprès du
+service Technologies de l'information, qui nous a alors présenté les bases
+de données de plusieurs applications. Nous avons obtenu les fichiers pdf
+des documents publiés sur le site web de la Chambre\footnote{URL~: \url{https://www.chd.lu/fr/searchactivities}}.
+Il s'agit de documents parlementaires publics tels que des projets de
+lois, des questions parlementaires\footnote{Questions posées par les députés aux membres du gouvernement sur l'actualité politique ou bien d'intérêt général.}, les réponses à ces
+questions, des procès-verbaux publics de réunions, etc. Une extraction
+de la base de données du Courrier électronique de la Chambre, dont les
+documents contenant des données confidentielles ont été exclus, nous a
+aussi été fournie au format csv. Le Courrier électronique est un système
+d'expéditions numériques interne pour le personnel et les députés. Les
+expéditions contiennent des pièces-jointes stockées dans un système de fichiers et leurs métadonnées sont stockées dans une base de
+données. Les pièces-jointes peuvent être des convocations, des invitations ou encore des
+projets de loi. Ce sont ces documents qui ont été mis à disposition
+avec certaines de leurs métadonnées. Nous avons donc eu un aperçu d'une
+partie des données stockées sur les serveurs de la Chambre et de leur
+organisation. Cet aperçu nous a été révélateur de l'existence d'un grand
+nombre d'applications métier différentes et de silos de données.
+
+Les silos de données sont des systèmes de gestion de
+l\textquotesingle information isolés, où les données sont stockées de
+manière indépendante sans communication fluide avec
+d\textquotesingle autres systèmes ou applications au sein d'une même
+organisation. Les inconvénients de ces silos auraient été mis en avant à
+partir des années 1980 quand a commencé à se poser la question de la
+collaboration entre les services\footcite{bygstad_it_2015}. Ils peuvent en effet compliquer les projets impliquant
+différentes équipes qui ne travaillent pas avec les mêmes applications
+et n'ont pas accès aux mêmes données. Pour les mêmes raisons, ils
+peuvent néanmoins parfois constituer une forme de sécurité. Les données
+sensibles de chaque équipe restent dans les mains de ces dernières ou dans celles de l'équipe qui gère les systèmes d'informations. La
+question de rassembler ces données est source d'inquiétude dans un
+contexte national où, comme évoqué précédemment (chapitre 2), les
+préoccupations sur la divulgation de données sensibles sont importantes.
+À la Chambre des Députés, l'affaire des \enquote{\emph{ChamberLeaks}} a contribué à accroître ces dernières. Il s'agit d'une faille de sécurité qui avait permis la consultation de documents internes via de simples URL en 2018. Toutefois, les archivistes devraient idéalement pouvoir archiver les
+différentes données produites par les services lorsqu'elles ont une
+valeur archivistique. Par exemple, à la Chambre des Députés, le contenu
+du Courrier électronique peut avoir un intérêt
+patrimonial, voire juridique. Des documents officiels transitent entre
+le personnel de l'administration parlementaire et les députés par cette
+voie. Or, son contenu est stocké dans une base de données complexe à
+appréhender et les archivistes n'y ont pas accès. Les archivistes de la
+Chambre n'ont pas de vue d'ensemble des différents silos et c'est également
+rarement le cas dans les autres administrations. Iels ont accès aux
+applications et aux données produites par leur service. En général, ce
+ne sont que quelques personnes qui travaillent côté systèmes d'information
+qui y ont accès et en ont une vision globale. Par ailleurs, ces silos
+peuvent causer une réplication des données, ce qui augmente par la suite le
+risque de désynchronisation des informations entre les différents
+systèmes. Cette réplication engendre une augmentation des besoins de
+stockage. La diversité des technologies et des bases de données
+utilisées complique leur maintenance, rendant les processus de gestion
+plus complexes et coûteux. Enfin, avant la création
+d\textquotesingle une nouvelle application, il est souvent nécessaire de
+recommencer l\textquotesingle étape de modélisation des données, ce qui
+ralentit les projets et génère des redondances inutiles. Le
+décloisonnement des silos peut donc permettre des gains financiers.
+D'après Gauthier Poupeau à propos des silos qui existaient dans les
+données de l'INA, «~maintenir un système et maîtriser les données est
+plus difficile et plus coûteux lorsque les silos se multiplient les uns
+à côté des autres, car une telle architecture dilue les
+moyens\footcite{poupeau__2024}~».
+
+A la Chambre des Députés du Grand-Duché, il existerait entre dix et
+quinze silos\footnote{Le contenu de ce paragraphe est basé sur un
+	entretien avec un membre du service Technologies de l'information en
+	charge du projet de refonte du système d'information de la Chambre
+	des Députés.}. Ils sont à la fois applicatifs et organisationnels. En
+effet, chaque service a ses applications. Il en existe par exemple une
+pour gérer les procès-verbaux de commission, une pour les travaux en
+commission, une pour les motions, etc. Ils sont organisationnels car
+chaque application répond à un besoin métier d'un service et applicatifs
+parce qu'ils sont liées à une seule application. Chaque application est
+basée sur des technologies propres et a sa base de données. Il y a donc
+plus d'une dizaine de bases de données différentes. Il existe toutefois
+une base de données métier sous la forme d'un grand référentiel qui est
+connectée aux différentes applications. Elle contient par exemple un
+référentiel personne, des moyens de contact, l'organigramme de la
+Chambre, etc. Cette base de données connectée évite ainsi certaines
+réplications de données, mais constitue aussi une application en elle-même. Face à ces silos, plusieurs solutions existent.
+À la Chambre, l'utilisation de référentiels  communs à différentes applications
+est une première étape afin de créer des connexions entre silos au sein
+du système d'information. Un projet de \emph{data warehouse} est
+également en cours. Un \emph{data warehouse} est un regroupement de
+données structurées provenant de différentes sources dans le but de
+faciliter leur analyse et la prise de décision au sein d'une
+administration\footcite{noauthor_quest-ce_nodate},
+dans un souci d'amélioration de la \emph{business
+	intelligence}\footnote{Ensemble des technologies, outils et pratiques permettant de collecter, analyser et transformer des données brutes en informations pertinentes pour prendre des décisions éclairées en entreprise.}. Le projet de la Chambre des
+Députés vise à répliquer les données de chaque application en
+mutualisant les différentes bases de données. Ce projet a trois
+objectifs principaux. La mutualisation des bases devrait faciliter le
+travail de \textit{reporting}, c'est à dire de production de rapports afin de
+monitorer la qualité des données. En effet, le \emph{data warehouse} devrait
+permettre de réaliser différentes datavisualisations via le logiciel
+d'analyses et visualisation de données \emph{Power BI} avec des modèles
+de données simplifiés. Le deuxième objectif est d'octroyer aux
+différents services un moyen de visualisation de leurs données,
+toujours via \emph{Power BI}. Enfin, ces données réorganisées pourront
+être connectées sur la plateforme d'\emph{open data} de l'État
+luxembourgeois\footnote{Plateforme \url{data.public.lu}. URL des jeux de
+	données publiés par la Chambre des Députés~:
+	\url{https://data.public.lu/fr/organizations/chambre-des-deputes-du-grand-duche-de-luxembourg/}}
+de manière automatique afin d'être publiées et téléchargeables par
+l'ensemble des citoyens. Les \emph{data warehouses} et les projets de
+décloisonnement des silos en général offrent ainsi des avantages
+considérables pour l\textquotesingle open data et
+l\textquotesingle intelligence artificielle. En centralisant et en
+structurant les données, ils permettent une meilleure accessibilité et
+transparence des informations pour le public. Ils permettent également
+une meilleure disponibilité de jeux de données de qualité pour
+l'entraînement et les tests de modèles d'IA. Ils apportent des gains de
+temps sur cette première phase de collecte et préparation de données.
+L'analyse facilitée par le \emph{data warehouse} garantit aussi une
+meilleure qualité des données pour entraîner des modèles.
+
+Un second projet est en marche à la Chambre de Députés. Il s'agit d'un
+projet de refonte des systèmes d'information. Cette refonte a
+pour but de regrouper les différentes applications métier en une seule.
+L'inconvénient d'une refonte des systèmes face au problème des silos
+est son coût et le temps qu'elle demande. Dans d\textquotesingle autres
+administrations publiques, la refonte peut être simplifiée par un nombre
+plus réduit d\textquotesingle applications et de données à restructurer.
+Cette refonte est par ailleurs une occasion de mieux organiser le
+\emph{records management} au sein de l'administration. À la Chambre des
+Députés, le projet a donné lieu à l'identification de quatre types
+principaux de données stockées dans les systèmes. Il s'agit des données
+sur les acteurs, des dossiers traités, des documents de ces dossiers, et
+des regroupements de personnes (réunions, évènements). Des dossiers sont effectivement traités
+par des ensembles d'acteurs, qui produisent différents documents pendant
+ce processus de traitement. Les documents, et idéalement l'ensemble des
+données ayant une valeur archivistique devraient être conservées. Le
+projet de refonte donne un regard sur ces données à archiver et fait
+émerger des réflexions quand à leur archivage. Aux archives municipales
+de la ville d'Amsterdam, une refonte du système informatique a
+récemment été l'occasion de réfléchir à une meilleure gestion et
+conservation des archives numériques. L'équipe a développé une
+intégration des fonctions d'archivistiques dès la création du système
+d'information\footcite{cristia_information_2020}.
+Il s'agit de la méthode nommée \emph{archiving-by-design}. Cette
+refonte a également permis de revoir les formats de métadonnées afin
+de faciliter l'adoption du modèle de description archivistique
+RiC-O\footcite{noauthor_ric_nodate}. La reprise des systèmes
+d'information face au problème des silos est donc une opportunité
+d'optimiser les pratiques d'archivage et de \emph{records management}.
+
+Il existe d'autres manières de décloisonner les silos. Un deuxième
+exemple est celui de l'INA (Institut national de
+l\textquotesingle audiovisuel) en France. Un «~lac de données~» a été
+développé dans un souci de «~recentralisation des systèmes d'information
+constitués en silos\footcite{poupeau__2024}~».
+Il s'agit d'un système de stockage de données brutes et hétérogènes
+provenant de diverses sources au sein du système d'information. Plusieurs projets IA ont été menés à l'INA. Le décloisonnement des silos
+grâce au lac de données y est également un moyen d'avoir accès à des
+données propres et centralisées et à des systèmes performants pour
+faciliter les automatisations via l'IA~: «~disposer d'une
+infrastructure centralisée pour toutes les données de l'INA {[}lui{]}
+ouvre également une nouvelle perspective : celle de pouvoir automatiser,
+en s'appuyant sur des technologies d'intelligence artificielle, la
+production d'un certain nombre de données\footcite{poupeau__2024}~».
+La question des silos s'est aussi beaucoup posée en bibliothèque. Nous avons trouvé moins de littérature
+l'abordant du point de vue des archives.
+\newline
+
+Pour conclure sur ces problématiques de silos et de
+décloisonnement, la phase de collecte et de préparation des données des
+projets IA donne lieu à une exploration des données présentes dans les
+systèmes de l'administration qui les initie. Cette exploration peut mettre
+en évidence les failles de leur organisation. Elle a ainsi des apports
+pour les personnes gérant les systèmes d'information. La collaboration
+avec les services gérant ces derniers dans les administrations
+paraît également inévitable pour l'archivage d'une grande partie des
+données qu'ils produisent. La recherche de données pour notre projet IA
+a révélé une partie de la face cachée de cet iceberg des données
+cloisonnées des systèmes d'information. Au delà des apports en termes
+d'automatisations, les projets IA ont aussi des apports d'ordre
+stratégique. Le décloisonnement des silos identifiés offre quant à lui
+une opportunité de produire des données de meilleure qualité et mieux
+extractibles pour entraîner ou tester des modèles de \emph{machine
+	learning}. Si les archivistes sont inclus dans le processus, cela peut
+avoir un impact positif sur la gestion des archives produites par les
+systèmes. La découverte des silos fait aussi ressortir le silo dans
+lequel se trouvent souvent les archivistes. Cantonnés à des rôles trop
+précis, ils n'ont parfois pas une vision globale sur les systèmes
+d'information. En effet, les archivistes ont souvent été présentés comme
+des «~généralistes de l'information\footcite{banat-berger__2012}~».
+D'après Françoise Banat-Berger dans un article publié en 2012 dans la
+Gazette des archives intitulé «~"Un métier à part entière, l'archiviste
+un généraliste de l'information" : qu'en est-il en 2012 dans le nouvel
+environnement numérique ?~» , 
+
+\begin{quote}
+L'archiviste est un professionnel bien
+singulier aux confins de la science de l'information, de
+l'archivistique, du juridique, de la qualité, des sciences
+administratives et historiques\footcite{banat-berger__2012}.
+\end{quote}
+\begin{quote}
+	La phrase de Gérard Naud : "un métier à part entière, l'archiviste un
+	généraliste de l'information" ou, comme l'écrit aujourd'hui Jean-Michel
+	Salaün un "architecte de l'information", reste par conséquent tout à
+	fait opérante avec une nécessité de travailler avec un périmètre de plus
+	en plus large de partenaires\footcite{banat-berger__2012}.
+\end{quote}
+
+Les projets IA appliqués aux archives numériques soulignent
+l\textquotesingle importance de ce rôle généraliste des archivistes,
+mettant en évidence la nécessité de collaborer étroitement avec divers
+acteurs, dont les informaticiens et responsables de projets numériques, pour optimiser la gestion des
+documents et l'automatisation des processus archivistiques.
+
+\subsection{Des apports moins techniques : des projets qui renforcent les liens entre les services et apportent une visibilité sur le monde des archives}
+
+La visibilité du monde des archives et sa collaboration avec d'autres
+domaines est importante pour plusieurs raisons. La question de la
+collaboration est abordée dans le code de déontologie de l'\emph{ICA (International Council on Archives)}. Le dixième article stipule
+que~:
+
+\begin{quote}
+	Les archivistes travaillent en collaboration avec leurs collègues et
+	les membres des professions voisines afin d\textquotesingle assurer
+	universellement la conservation et l\textquotesingle exploitation du
+	patrimoine documentaire. Les archivistes cherchent à stimuler la
+	collaboration et à éviter les conflits avec leurs collègues, en
+	résolvant les difficultés par l\textquotesingle encouragement à
+	respecter les normes archivistiques et l\textquotesingle éthique
+	professionnelle. Les archivistes coopèrent avec les représentants des
+	professions parallèles dans un esprit de respect et de compréhension
+	mutuelle\footcite{noauthor_code_nodate}.
+\end{quote}
+
+La collaboration est donc une valeur fondamentale dans le domaine
+archivistique. D'après Sylvie Forastier dans un article publié dans la
+\emph{Gazette des archives} sur son expérience de \emph{records manager} pour un
+cabinet d'avocat international au Luxembourg, «~il serait réducteur
+d'envisager un service d'archives comme étant uniquement à vocation
+administrative interne, un service d'archives n'est pas totalement
+déconnecté du monde externe et des activités générales de
+l'entreprise\footcite{forastier_archiviste_2015}~» et il « ne fonctionne pas en autarcie
+mais participe à la dynamique de l'entreprise\footcite{forastier_archiviste_2015}~». Se faire connaître auprès des autres services est
+effectivement essentiel pour que les données et documents à archiver de
+chacun d'entre eux soient mis à disposition. Une bonne compréhension du
+fonctionnement des ces services est obtenue après des discussions avec
+leur personnel et permet de mieux connaître les documents produits et
+leur contexte. L'archiviste est alors au fait des différents processus
+de travail et peut adapter la stratégie d'archivage. Avec l'émergence
+des documents numériques, l'archivistique n\textquotesingle est
+aujourd'hui plus limitée aux trois âges théorisés d'Yves
+Pérotin\footnote{Yves Pérotin, \enquote{L\textquotesingle administration et les \enquote{trois âges} des archives}, \emph{Seine et Paris}, 20, (octobre 1961), p. 31-33}, mais il s'agit d'une «~archivistique des flux~»\footcite{guyon_archivistique_2022}. Les archivistes doivent idéalement être impliqués dès
+la création des documents numériques, «~dès l'âge courant, c'est-à-dire
+dès la conception des systèmes d'information\footcite{guyon_archivistique_2022}~». Comme évoqué précédemment, les
+archivistes sont désormais des «~généralistes de
+l'information\footcite{banat-berger__2012}~» et ils traitent tout type
+de données. Or, d'après Jenny Bunn, \emph{Head of Archives Research} aux
+Archives nationales britanniques, la tendance serait à une
+spécialisation du personnel, qui peut générer des silos\footcite{jaillant_are_2024}. Les administrations et les archives pourraient donc tirer
+parti de collaborations interdisciplinaires plus récurrentes\footcite{jaillant_are_2024}.\newline
+
+Par ailleurs, pour mener à bien des projets
+d\textquotesingle intelligence artificielle, une collaboration étroite
+avec les acteurs informatiques et les responsables de la sécurité des
+systèmes d'information (RSSI) est indispensable. Les projets peuvent exploiter
+l\textquotesingle expertise des chefs de projets informatiques, de
+développeurs et autres professionnels de l'informatique, qui sont par la même occasion
+ sensibilisés aux enjeux archivistiques, en général assez flous
+pour eux. Ils peuvent alors prendre plus naturellement en compte
+les préoccupations archivistiques au moment du développement informatique.
+La collaboration entre archivistes et informaticiens, bien que
+stimulante, est complexe, car elle nécessite une compréhension mutuelle
+entre deux mondes parfois perçus comme très différents, les archives
+étant parfois considérées comme une préoccupation supplémentaire non
+primordiale pour les personnes issues du monde de l'informatique. La
+communication peut également être délicate à mettre en place. Cette idée
+est évoquée dans un article datant de 2021 intitulé «~How AI Developers
+Overcome Communication Challenges in a Multidisciplinary Team: A Case
+Study\footcite{piorkowski_how_2021}~». Les
+équipes n'ont pas les mêmes connaissances et les personnes qui ne
+maîtrisent pas l'informatique peuvent avoir de trop hautes attentes. Il
+est donc important de travailler avec des personnes capables de faire le
+lien entre les acteurs, qui maîtrisent à la fois le langage du monde de
+l'informatique et des sciences de l'information. Des collaborations
+récurrentes pourront mener à une meilleure littératie numérique chez les
+archivistes et une compréhension plus approfondie des besoins de chaque
+partie prenante.
+
+Une collaboration avec d\textquotesingle autres services est également
+envisageable pour obtenir les données d\textquotesingle entraînement
+nécessaires. Cette collaboration renforce alors les liens en impliquant
+les services qui fournissent eux-mêmes leurs données, devenant ainsi
+proactifs dans le travail archivistique. Dans le cadre du projet
+InventAIre, nous avons eu des liens avec les services RH et des
+relations européennes, internationales et du protocole. Ils ont dès
+lors été mis au courant de l'existence de notre projet. Les projets
+d\textquotesingle IA apportent en effet également une certaine publicité
+aux archives, même s'il convient de rester vigilant face aux risques de
+mauvaise publicité en cas d'échec. Ils démontrent que le domaine
+peut aussi pousser l'innovation et est utile. Nous avons par ailleurs
+tenté une collaboration avec les Archives nationales du Luxembourg pour
+obtenir des données de test. La collaboration peut s'étendre au-delà
+d'une administration et favoriser les synergies entre administrations.
+\newline 
+
+Les contributions des projets d\textquotesingle intelligence
+artificielle dans le domaine des archives vont bien au-delà de simples
+automatisations. En effet, l\textquotesingle interaction avec le
+personnel d\textquotesingle autres services et
+l\textquotesingle exploration de leurs données peuvent être profitables
+pour toutes les parties impliquées. Ces projets IA offrent par
+conséquent des bénéfices variés dans des secteurs tout aussi variés.
