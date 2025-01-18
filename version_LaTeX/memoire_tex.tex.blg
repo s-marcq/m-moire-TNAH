@@ -1,5 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'memoire_tex.tex.blg'
-[95] biber:340> INFO - === ven. août 30, 2024, 22:25:35
-[267] Utils.pm:410> ERROR - Cannot find 'memoire_tex.tex.bcf'!
-[268] Biber.pm:136> INFO - ERRORS: 1
